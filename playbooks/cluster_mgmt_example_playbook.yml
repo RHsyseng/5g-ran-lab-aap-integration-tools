@@ -14,7 +14,8 @@
           vars:
             namespace_name: "{{ namespace_to_add }}"
             state: "{{ state }}"
-        - include_tasks: ../roles/example-shell-script/tasks/runscript.yml
+        - include_role: 
+            name: ../roles/example-shell-script
       always:
         - include_tasks: ../roles/k8s-cluster-access/tasks/remove-access.yml
           ignore_errors: true
