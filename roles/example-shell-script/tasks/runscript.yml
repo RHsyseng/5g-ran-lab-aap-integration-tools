@@ -1,2 +1,2 @@
 - name: Execute example shell script in remote shell
-  ansible.builtin.shell: pwd#examplescript.sh >> log.txt
+  ansible.builtin.shell: pwd
