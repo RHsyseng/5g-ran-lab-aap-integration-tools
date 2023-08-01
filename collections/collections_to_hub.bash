@@ -30,6 +30,7 @@ fi
 DIR='./collections'
 
 if [ ! -d "$DIR" ]; then
+    echo "Downloading collections from Galaxy"
     ansible-galaxy collection download -r requirements.yml
 else
     echo "Using existing collections directory"
@@ -58,6 +59,11 @@ for path in $DIR/*.tar.gz; do
     ansible-galaxy collection publish "$DIR/${NAMESPACE}-${COLLECTION}-${VERSION}.tar.gz" --ignore-certs
     curl -sku ${GALAXY_NG_USER}:"${GALAXY_NG_PASSWORD}" -X POST -H 'Content-Type: application/json' "${GALAXY_NG_URL}"/api/galaxy/v3/collections/"${NAMESPACE}"/"${COLLECTION}"/versions/"${VERSION}"/move/staging/published/ | jq
 done
+
+echo "Cleaning Up"
+
+rm ./ansible.cfg
+rm -rf ./collections
 
 echo "Finished"
 
