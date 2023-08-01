@@ -1,2 +1,2 @@
 - name: Execute example shell script in remote shell
-  ansible.builtin.shell: echo { playbook_dir  }
+  ansible.builtin.shell: echo "{{ playbook_dir }}"
