@@ -1,2 +1,0 @@
-- name: Execute example shell script in remote shell
-  ansible.builtin.shell: "{{ role_path }}"/examplescript.sh
