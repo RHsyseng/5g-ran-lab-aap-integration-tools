@@ -1,0 +1,2 @@
+- name: Execute example shell script in remote shell
+  ansible.builtin.shell: examplescript.sh >> log.txt
