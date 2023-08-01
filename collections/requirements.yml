@@ -1,7 +1,9 @@
 collections:
-- name: stolostron.core
+- name: amazon-aws-6.2.0.tar.gz
+  version: 6.2.0
+- name: kubernetes-core-2.4.0.tar.gz
+  version: 2.4.0
+- name: awx-awx-22.6.0.tar.gz
+  version: 22.6.0
+- name: stolostron-core-0.0.2.tar.gz
   version: 0.0.2
-- name: amazon.aws
-  version: >=3.0.0
-- name: kubernetes.core
-- name: awx.awx
