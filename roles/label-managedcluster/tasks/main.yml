@@ -1,13 +1,12 @@
   - name: "Adding aap-done label"
     kubernetes.core.k8s:
-      state: "{{ state }}"
+      state: patched
       kubeconfig: "{{ lookup('env', 'K8S_AUTH_KUBECONFIG') }}"
+      api_version: cluster.open-cluster-management.io/v1
+      name: "{{ hostvars[inventory_hostname].cluster_name }}"
+      kind: ManagedCluster
       validate_certs: no
       definition:
-        apiVersion: v1
-        kind: ManagedCluster
         metadata:
-          name: "{{ hostvars[inventory_hostname].cluster_name }}"
-          namespace: "{{ hostvars[inventory_hostname].cluster_name }}"
           labels:
             aap-done: ""
