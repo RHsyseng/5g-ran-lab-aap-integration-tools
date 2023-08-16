@@ -14,6 +14,10 @@
           vars:
             namespace_name: "{{ namespace_to_add }}"
             state: "{{ state }}"
+        - include_role:
+            name: ../roles/label-managedcluster
+          vars:
+            state: "{{ state }}"
       always:
         - include_tasks: ../roles/k8s-cluster-access/tasks/remove-access.yml
           ignore_errors: true
