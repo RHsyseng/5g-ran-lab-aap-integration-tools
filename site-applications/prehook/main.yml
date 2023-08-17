@@ -1,0 +1,7 @@
+apiVersion: tower.ansible.com/v1alpha1
+kind: AnsibleJob
+metadata:
+  name: ztp-day2-automation
+spec:
+  tower_auth_secret: aap-controller-token
+  job_template_name: ztp-day2-automation-template
