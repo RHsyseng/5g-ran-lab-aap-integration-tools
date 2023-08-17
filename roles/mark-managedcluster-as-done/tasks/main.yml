@@ -1,14 +1,3 @@
-- name: "Creating ClusterClaim aap-done"
-  kubernetes.core.k8s:
-    state: present
-    host: "{{ cluster_proxy.cluster_url }}"
-    validate_certs: no
-    api_key: "{{managed_serviceaccount.token}}"  
-    definition:
-      apiVersion: cluster.open-cluster-management.io/v1alpha1
-      kind: ClusterClaim
-      metadata:
-        name: aap-done
 - name: "Adding aap-done label"
   kubernetes.core.k8s:
     state: patched
