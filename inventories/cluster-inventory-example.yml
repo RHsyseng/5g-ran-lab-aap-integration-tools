@@ -22,3 +22,7 @@ cluster_groups:
 - name: all-managed-clusters
   label_selectors:
   - name!=local-cluster
+- name: all-ztp-done-clusters
+  label_selectors:
+  - ztp-done=
+  - name!=local-cluster
