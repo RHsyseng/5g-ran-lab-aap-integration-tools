@@ -4,4 +4,4 @@ metadata:
   name: ztp-day2-automation
 spec:
   tower_auth_secret: aap-controller-token
-  job_template_name: ztp-day2-automation-template
+  job_template_name: "ZTP Done Automation"
